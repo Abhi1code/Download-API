@@ -1,0 +1,835 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+
+
+/* reset */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+nav ul,
+nav li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* start editing from here */
+
+a {
+    text-decoration: none;
+}
+
+.txt-rt {
+    text-align: right;
+}
+
+
+/* text align right */
+
+.txt-lt {
+    text-align: left;
+}
+
+
+/* text align left */
+
+.txt-center {
+    text-align: center;
+}
+
+
+/* text align center */
+
+.float-rt {
+    float: right;
+}
+
+
+/* float right */
+
+.float-lt {
+    float: left;
+}
+
+
+/* float left */
+
+.clear {
+    clear: both;
+}
+
+
+/* clear float */
+
+.pos-relative {
+    position: relative;
+}
+
+
+/* Position Relative */
+
+.pos-absolute {
+    position: absolute;
+}
+
+
+/* Position Absolute */
+
+.vertical-base {
+    vertical-align: baseline;
+}
+
+
+/* vertical align baseline */
+
+.vertical-top {
+    vertical-align: top;
+}
+
+
+/* vertical align top */
+
+nav.vertical ul li {
+    display: block;
+}
+
+
+/* vertical menu */
+
+nav.horizontal ul li {
+    display: inline-block;
+}
+
+
+/* horizontal menu */
+
+img {
+    max-width: 100%;
+}
+
+
+/*end reset*/
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    font-family: 'Barlow', sans-serif;
+}
+
+body a {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    text-decoration: none;
+}
+
+body a:hover {
+    text-decoration: none;
+}
+
+body a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+select,
+input[type="email"],
+input[type="text"],
+input[type=password],
+input[type="button"],
+input[type="submit"],
+textarea {
+    font-family: 'Barlow', sans-serif;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 1px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 1px;
+}
+
+ul {
+    font-family: 'Barlow', sans-serif;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+}
+
+
+/*-- //Reset-Code --*/
+
+body {
+    background: url(https://matrixfrats.com/calculator/images/1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    min-height: 100vh;
+}
+
+h1.header-w3ls {
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 3px rgba(0, 0, 0, 0.42);
+    letter-spacing: 8px;
+}
+
+.hotel-bothside {
+    padding: 2em;
+    margin: 0em auto;
+    margin-bottom: 50px;
+    -webkit-box-shadow: -2px 7px 37px 8px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: -2px 7px 37px 8px rgba(0, 0, 0, 0.52);
+    box-shadow: -2px 7px 37px 8px rgba(0, 0, 0, 0.52);
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.mid-cls {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.hotel-left-w3ls,
+.hotel-right-w3ls {
+    flex-basis: 48%;
+    -webkit-flex-basis: 48%;
+}
+
+.hotel-right-w3ls h2,
+.hotel-left-w3ls h2 {
+    font-size: 39px;
+    color: #ffe500;
+    text-align: center;
+    letter-spacing: 4px;
+    padding-bottom: 21px;
+}
+
+.main {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.form-right-to-w3ls,
+.form-left-to-w3l {
+    flex-basis: 48%;
+    -webkit-flex-basis: 48%;
+}
+
+.add input[type="text"] {
+    width: 100%
+}
+
+.form-right-to-w3ls input[type="text"] {
+    padding-right: 0px;
+}
+
+.form-left-to-w3l p,
+.form-right-to-w3ls p,
+.form-control-w3l p,
+.form-add-to-w3ls p {
+    color: #23b7bd;
+    font-size: 17px;
+    letter-spacing: .5px;
+    text-transform: capitalize;
+}
+
+select.form-control {
+    outline: none;
+    width: 100%;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+.form-left-to-w3l input[type="text"],
+.form-right-to-w3ls input[type="text"],
+.form-left-to-w3l input[type="date"],
+.form-right-to-w3ls input[type="date"],
+.form-left-to-w3l input[type="email"],
+.form-control-w3l textarea,
+.form-add-to-w3ls input[type="text"] {
+    -webkit-appearance: none;
+    display: inline-block;
+}
+
+select.form-control,
+.form-left-to-w3l input[type="date"],
+.form-right-to-w3ls input[type="date"],
+.form-left-to-w3l input[type="text"],
+.form-right-to-w3ls input[type="text"],
+.form-left-to-w3l input[type="email"],
+.form-control-w3l textarea,
+.form-add-to-w3ls input[type="text"] {
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    color: #000;
+    letter-spacing: 2px;
+    border: none;
+    font-size: 15px;
+    box-shadow: -2px 7px 37px 8px rgba(12, 12, 12, 0.11);
+    margin: 0px 0px 29px;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+}
+
+option {
+    background: #fff;
+}
+
+textarea {
+    height: 116px;
+    padding: 1em;
+    overflow: hidden;
+    resize: none;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #000;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #000;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #000;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #000;
+}
+
+.btnn {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+button[type=submit] {
+    width: 100%;
+    background: #0d8a9f;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 11px 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+button:hover {
+    color: #000;
+    background: #fff;
+}
+
+.copy p {
+    margin: 0em;
+    text-align: center;
+    font-size: 17px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.copy p a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copy p a:hover {
+    color: #0d8a9f;
+}
+
+
+/*--responsive--*/
+
+@media(max-width:1920px) {
+    .hotel-bothside {
+        width: 69%;
+    }
+    h1.header-w3ls {
+        font-size: 66px;
+        padding: 51px 0px 34px;
+    }
+    select.form-control,
+    .form-left-to-w3l input[type="date"],
+    .form-right-to-w3ls input[type="date"],
+    .form-left-to-w3l input[type="text"],
+    .form-right-to-w3ls input[type="text"],
+    .form-left-to-w3l input[type="email"],
+    .form-control-w3l textarea,
+    .form-add-to-w3ls input[type="text"] {
+        padding: 1em;
+        margin: 0px 0px 39px;
+    }
+    .copy {
+        padding: 43px 0px;
+    }
+    select.form-control,
+    .form-left-to-w3l input[type="date"],
+    .form-right-to-w3ls input[type="date"] {
+        height: 49px;
+    }
+}
+
+@media(max-width:1680px) {
+    .hotel-bothside {
+        width: 67%;
+    }
+}
+
+@media(max-width:1600px) {
+    .hotel-bothside {
+        width: 64%;
+    }
+    h1.header-w3ls {
+        font-size: 57px;
+        padding: 31px 0px 25px
+    }
+    .copy {
+        padding: 30px 0px;
+    }
+    select.form-control,
+    .form-left-to-w3l input[type="date"],
+    .form-right-to-w3ls input[type="date"],
+    .form-left-to-w3l input[type="text"],
+    .form-right-to-w3ls input[type="text"],
+    .form-left-to-w3l input[type="email"],
+    .form-control-w3l textarea,
+    .form-add-to-w3ls input[type="text"] {
+        padding: .8em;
+        margin: 0px 0px 33px;
+    }
+    select.form-control {
+        height: 43px;
+    }
+}
+
+@media(max-width:1440px) {
+    .hotel-bothside {
+        width: 62%;
+    }
+}
+
+@media(max-width:1366px) {
+    .hotel-bothside {
+        width: 68%;
+    }
+    h1.header-w3ls {
+        font-size: 55px;
+    }
+}
+
+@media(max-width:1280px) {
+    .hotel-bothside {
+        width: 70%;
+    }
+}
+
+@media(max-width:1080px) {
+    .hotel-bothside {
+        width: 83%;
+    }
+    select.form-control,
+    .form-left-to-w3l input[type="date"],
+    .form-right-to-w3ls input[type="date"],
+    .form-left-to-w3l input[type="text"],
+    .form-right-to-w3ls input[type="text"],
+    .form-left-to-w3l input[type="email"],
+    .form-control-w3l textarea,
+    .form-add-to-w3ls input[type="text"] {
+        font-size: 14px;
+    }
+}
+
+@media(max-width:1050px) {
+    button[type=submit] {
+        font-size: 16px;
+    }
+}
+
+@media(max-width:1024px) {
+    .hotel-bothside {
+        width: 82%;
+    }
+    h1.header-w3ls {
+        font-size: 52px;
+    }
+    .hotel-right-w3ls h2,
+    .hotel-left-w3ls h2 {
+        font-size: 37px;
+        padding-bottom: 18px;
+    }
+    h1.header-w3ls {
+        padding: 27px 0px 22px;
+    }
+    select.form-control,
+    .form-left-to-w3l input[type="text"],
+    .form-right-to-w3ls input[type="text"],
+    .form-left-to-w3l input[type="email"],
+    .form-control-w3l textarea,
+    .form-add-to-w3ls input[type="text"] {
+        margin: 0px 0px 30px;
+        letter-spacing: 1px;
+    }
+}
+
+@media(max-width:991px) {
+    select.form-control,
+    .form-left-to-w3l input[type="text"],
+    .form-right-to-w3ls input[type="text"],
+    .form-left-to-w3l input[type="email"],
+    .form-control-w3l textarea,
+    .form-add-to-w3ls input[type="text"] {
+        padding: .6em;
+    }
+    select.form-control {
+        height: 35px;
+    }
+    textarea {
+        height: 100px;
+    }
+}
+
+@media(max-width:900px) {
+    .mid-cls {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    .hotel-right-w3ls h2,
+    .hotel-left-w3ls h2 {
+        letter-spacing: 2px;
+        font-size: 35px;
+    }
+}
+
+@media(max-width:800px) {
+    .hotel-right-w3ls h2,
+    .hotel-left-w3ls h2 {
+        padding-bottom: 26px;
+    }
+    .hotel-bothside {
+        width: 72%;
+        padding: 35px 30px;
+    }
+    textarea {
+        height: 116px;
+    }
+    h1.header-w3ls {
+        letter-spacing: 6px;
+    }
+}
+
+@media(max-width:768px) {
+    .copy p {
+        letter-spacing: 2px;
+    }
+}
+
+@media(max-width:767px) {
+    h1.header-w3ls {
+        font-size: 50px;
+    }
+    .copy p {
+        font-size: 16px;
+    }
+}
+
+@media(max-width:736px) {
+    .hotel-bothside {
+        width: 72%;
+        padding: 30px 30px;
+    }
+    h1.header-w3ls {
+        font-size: 48px;
+    }
+    select.form-control,
+    .form-left-to-w3l input[type="text"],
+    .form-right-to-w3ls input[type="text"],
+    .form-left-to-w3l input[type="email"],
+    .form-control-w3l textarea,
+    .form-add-to-w3ls input[type="text"] {
+        font-size: 13px;
+    }
+}
+
+@media(max-width:667px) {
+    h1.header-w3ls {
+        letter-spacing: 4px;
+    }
+    .hotel-bothside {
+        width: 74%;
+    }
+    .hotel-right-w3ls h2,
+    .hotel-left-w3ls h2 {
+        padding-bottom: 23px;
+    }
+    .copy p {
+        letter-spacing: 1px;
+    }
+}
+
+@media(max-width:640px) {
+    .hotel-bothside {
+        padding: 24px 30px 35px;
+    }
+    h1.header-w3ls {
+        font-size: 45px;
+    }
+}
+
+@media(max-width:600px) {
+    .copy p {
+        padding: 0px 20px;
+        line-height: 29px;
+    }
+    h1.header-w3ls {
+        letter-spacing: 2px;
+    }
+}
+
+@media(max-width:568px) {
+    h1.header-w3ls {
+        font-size: 43px;
+    }
+    .hotel-bothside {
+        width: 77%;
+    }
+    .hotel-right-w3ls h2,
+    .hotel-left-w3ls h2 {
+        font-size: 33px;
+    }
+}
+
+@media(max-width:480px) {
+    h1.header-w3ls {
+        font-size: 39px;
+        letter-spacing: 1px;
+    }
+    .main {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+}
+
+@media(max-width:440px) {
+    select.form-control,
+    .form-left-to-w3l input[type="text"],
+    .form-right-to-w3ls input[type="text"],
+    .form-left-to-w3l input[type="email"],
+    .form-control-w3l textarea,
+    .form-add-to-w3ls input[type="text"] {
+        margin: 0px 0px 26px;
+    }
+    h1.header-w3ls {
+        line-height: 52px;
+    }
+}
+
+@media(max-width:414px) {
+    .hotel-right-w3ls h2,
+    .hotel-left-w3ls h2 {
+        letter-spacing: 1px;
+    }
+    textarea {
+        height: 101px;
+    }
+}
+
+@media(max-width:384px) {
+    .hotel-bothside {
+        width: 73%;
+    }
+    h1.header-w3ls {
+        font-size: 37px;
+    }
+    .hotel-right-w3ls h2,
+    .hotel-left-w3ls h2 {
+        font-size: 29px;
+    }
+}
+
+@media(max-width:375px) {
+    h1.header-w3ls {
+        font-size: 34px;
+    }
+}
+
+@media(max-width:320px) {
+    h1.header-w3ls {
+        font-size: 32px;
+    }
+    .hotel-right-w3ls h2,
+    .hotel-left-w3ls h2 {
+        font-size: 27px;
+    }
+}
+
+
+/*--//responsive--*/
