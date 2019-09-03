@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Download any file</title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Meta tags -->
+    <!--stylesheets-->
+    <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+    <!--//style sheet end here
+
+	<link href="//fonts.googleapis.com/css?family=Barlow:300,400,500,600" rel="stylesheet">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+</head>
+
+<body style="overflow:hidden;">
+    <h1 class="header-w3ls" style="overflow:-moz-hidden-unscrollable;">
+    </h1>
+    <!--login form-->
+    <div class="hotel-bothside" style="overflow:-moz-hidden-unscrollable;">
+        <form action="#" method="post">
+            <div class="hotel-left-w3ls">
+
+                <div class="main" style="margin-top: 15px;">
+                    <div style="color:aliceblue;margin:8px;">URL :</div>
+                    <input type="text" name="url" id="url" style="width:300px;height:30px;float:left;">
+
+                    <div style="color:aliceblue;margin:8px;">API Token :</div>
+                    <input type="text" name="token" id="token" style="width:300px;height:30px;float:right;">
+
+                </div>
+
+                <div class="main" style="margin-top: 15px;">
+
+                    <button type="submit" id="downloadfile" style="width:805px;height:40px;float:right;margin-left: 12px;">Download File</button>
+                </div>
+
+                <div class="main" style="margin-top: 15px;">
+                    <div style="color:aliceblue;margin: 8px;">Unique Id :</div>
+                    <input type="text" name="id" id="id" style="width:300px;height:30px;">
+
+                    <button type="submit" id="status" style="width:300px;height:40px;float:right;">Check Status</button>
+
+                </div>
+
+                <div class="main" style="margin-top: 15px;">
+                    <div style="color:aliceblue;margin: 8px;">Status :</div>
+                    <div id="dstatus" style="height:30px;color:aliceblue;margin: 8px;"></div>
+                    <div style="color:aliceblue;margin: 8px;">File Size :</div>
+                    <div id="size" style="height:30px;color:aliceblue;margin: 8px;"></div>
+                </div>
+
+                <div class="main" style="margin-top: 5px;">
+                    <div style="color:aliceblue;margin: 8px;">Downloaded size :</div>
+                    <div id="downloadedsize" style="height:30px;color:aliceblue;margin: 8px;"></div>
+                    <div style="color:aliceblue;margin: 8px;">Remaining size :</div>
+                    <div id="remainingsize" style="height:30px;color:aliceblue;margin: 8px;"></div>
+                </div>
+
+                <div class="main" style="margin-top: 5px;">
+                    <div style="color:aliceblue;margin: 8px;">Estimated time(sec) :</div>
+                    <div id="time" style="height:30px;color:aliceblue;margin: 8px;"></div>
+                    <div style="color:aliceblue;margin: 8px;"></div>
+                    <div id="up" style="height:30px;color:aliceblue;margin: 8px;">Uploading..</div>
+                </div>
+
+                <div class="main" style="margin-top: 15px;">
+                    <div style="color:aliceblue;margin: 8px;">Upload File :</div>
+                    <input type="file" name="file" id="file" style="width:300px;height:30px;margin: 8px;color:aliceblue;" />
+
+                    <button type="submit" id="upload" style="width:300px;height:40px;float:right;">Upload File</button>
+
+                </div>
+
+                <div class="main" style="margin-top: 15px;">
+                    <div style="color:aliceblue;margin: 8px;">Download url :</div>
+                    <div id="download_url" style="height:40px;color:aliceblue;margin: 8px;width: 350px;overflow: auto;">
+                    </div>
+
+                    <button type="submit" id="geturl" style="width:300px;height:40px;float:right;margin-top: 8px;">Get url</button>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
