@@ -11,9 +11,10 @@ if(isset($_POST['url']) && !empty($_POST['url']) && isset($_POST['token']) && !e
     
     $url = $_POST['url'];
     $token = $_POST['token'];
+    $name = $_POST['name'];
 
     require("download_worker.php");
-    $worker = new DownloadWorker($url);
+    $worker = new DownloadWorker($url, $name);
 
     ob_end_clean();
     header("Connection: close\r\n");
@@ -39,7 +40,7 @@ if(isset($_POST['url']) && !empty($_POST['url']) && isset($_POST['token']) && !e
     } else {
 
       $array = array("code_status" => "401", "error_status" => "Authentication Failure");
-      echo (json_encode($array));
+      echo json_encode($array);
     }
 
     $size = ob_get_length();
@@ -47,7 +48,7 @@ if(isset($_POST['url']) && !empty($_POST['url']) && isset($_POST['token']) && !e
 
     ob_end_flush();     // Strange behaviour, will not work
     flush();            // Unless both are called !
-    ob_end_clean();
+    //ob_end_clean();
 
     $worker->start_download_worker();    // Download worker will be started
 

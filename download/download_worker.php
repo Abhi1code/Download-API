@@ -14,21 +14,24 @@ class DownloadWorker
 	private $filesize;
 	private $filename;
 
-	function __construct($url)
+	function __construct($url, $name)
 	{
-		require_once("../db/user_trans.php");
+		require_once("/home/matrixfr/public_html/download_api/db/user_trans.php");
 		$this->mconn = new Usertrans;
         $this->url = $url;
+        $this->name = $name;
 		$this->generate_random();
 	}
 
 	public function start_download_worker(){
 		$filesize = $this->curl_get_file_size($this->url);
-		if($filesize){
+		if($filesize < 0)$filesize = 0;
+		
+		if($filesize > 0){
 			$filename = $this->generate_filename();
            if($filename){
 
-			$st = $this->mconn->savefilesize($filesize, $this->url, $this->random, $filename, $this->downloading_code, time());
+			$st = $this->mconn->savefilesize($filesize, $this->url, $this->name, $this->random, $filename, $this->downloading_code, time());
             if($st){
 			   $this->filesize = $filesize;
 			   $this->filename = $filename;
@@ -55,7 +58,7 @@ class DownloadWorker
 	private function generate_filename(){
 		$ext = $this->extract_extension($this->url);
 		if($ext){
-           return ("upload/".$this->random.".".$ext);
+           return ("upload/".$this->random."-".$this->name.".".$ext);
 		}
 		return false;
 	}
@@ -89,26 +92,18 @@ class DownloadWorker
 		//curl_setopt( $curl, CURLOPT_USERAGENT, get_user_agent_string() );
 	  
 		$data = curl_exec( $curl );
-		curl_close( $curl );
 	  
-		if( $data ) {
-		  $content_length = "unknown";
-		  $status = "unknown";
-	  
-		  if( preg_match( "/^HTTP\/1\.[01] (\d\d\d)/", $data, $matches ) ) {
-			$status = (int)$matches[1];
-		  }
-	  
-		  if( preg_match( "/Content-Length: (\d+)/", $data, $matches ) ) {
-			$content_length = (int)$matches[1];
-		  }
-	  
+		if( $data && !curl_errno($curl)) {
+	      
+	      $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 		  // http://en.wikipedia.org/wiki/List_of_HTTP_status_codes
-		  if( $status == 200 || ($status > 300 && $status <= 308) ) {
-			$result = $content_length;
+		  if( $http_code == 200 || ($http_code > 300 && $http_code <= 308) ) {
+			$result = curl_getinfo($curl, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
+			//echo $result;
 		  }
 		}
 	  
+	    curl_close( $curl );
 		return $result;
 	  }
 

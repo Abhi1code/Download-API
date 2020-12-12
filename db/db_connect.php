@@ -5,9 +5,9 @@
 class Dbconnect
 {
 	private $hostname = 'localhost';
-	private $dbname = 'test';
-	private $user = 'root';
-	private $password = '';
+	private $dbname = 'matrixfr_mat';
+	private $user = 'matrixfr_mat';
+	private $password = 'itslife';
 	
 	public function establish_conn()
 	{

@@ -3,10 +3,10 @@ $(document).ready(function() {
 
     $("#upload").click(function(e) {
         e.preventDefault();
-        if ($("#file").val() != null && $("#file").val() != '') {
+        if ($("#file").val() != null && $("#file").val() != '' && $("#token").val() != '' && $("#token").val() != null) {
             con_file();
         } else {
-            alert("Please upload file");
+            alert("Please choose file or enter auth token");
         }
 
     });
@@ -17,13 +17,17 @@ $(document).ready(function() {
         var property = document.getElementById("file").files[0];
         var file_name = property.name;
         var file_extension = file_name.split('.').pop().toLowerCase();
+        var token = $('#token').val();
+        var name = $('#name').val();
 
         if (property.size > 10000000) {
             alert("Upload within 10 mb");
         } else {
             data.append("file", property);
+            data.append("token", token);
+            data.append("name", name);
             $.ajax({
-                url: './../upload/index.php',
+                url: '/download_api/upload/index.php',
                 cache: false,
                 contentType: false,
                 processData: false,
@@ -59,15 +63,17 @@ $(document).ready(function() {
         e.preventDefault();
         var url = $('#url').val();
         var token = $('#token').val();
+        var name = $('#name').val();
 
         if (/^(http|https|ftp):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i.test(url) && token) {
 
             var data = {
                 url: $('#url').val(),
-                token: $('#token').val()
+                token: $('#token').val(),
+                name: $('#name').val()
             };
 
-            $.post("./../download/index.php", data, function(data, status) {
+            $.post("/download_api/download/index.php", data, function(data, status) {
 
                 if (data) {
                     var response = JSON.parse(data);
@@ -100,7 +106,7 @@ $(document).ready(function() {
 
         if (id) {
 
-            $.get("./../status/index.php", { id: $('#id').val() }, function(data, status) {
+            $.get("/download_api/status/index.php", { id: $('#id').val() }, function(data, status) {
 
                 if (data) {
                     var response = JSON.parse(data);
@@ -138,7 +144,7 @@ $(document).ready(function() {
 
         if (id) {
 
-            $.get("./../file/index.php", { id: $('#id').val() }, function(data, status) {
+            $.get("/download_api/file/index.php", { id: $('#id').val() }, function(data, status) {
 
                 if (data) {
                     var response = JSON.parse(data);

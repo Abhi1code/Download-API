@@ -15,11 +15,12 @@ class Usertrans
 			
 	}
 	
-	public function savefilesize($size, $url, $random, $filename, $status, $time, $updatesize=0){
-		$sql = "INSERT INTO `filedata`(`id`, `url`, `filesize`, `updatesize`, `random`, `filename`, `status`, `time`) VALUES (null, :url, :size, :updatesize, :random, :filename, :status, :time)";
+	public function savefilesize($size, $url, $name, $random, $filename, $status, $time, $updatesize=0){
+		$sql = "INSERT INTO `filedata`(`id`, `url`, `name`, `filesize`, `updatesize`, `random`, `filename`, `status`, `time`) VALUES (null, :url, :name, :size, :updatesize, :random, :filename, :status, :time)";
         $bind = $this->mconn->prepare($sql);
 	
 		$bind->bindParam(":url", $url);
+		$bind->bindParam(":name", $name);
 		$bind->bindParam(":size", $size);
 		$bind->bindParam(":random", $random);
 		$bind->bindParam(":filename", $filename);

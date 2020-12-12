@@ -5,27 +5,38 @@ File Handling
 
 error_reporting(0);
 
-if($_FILES["file"]["name"] != ''){
+if($_FILES["file"]["name"] != '' && isset($_POST['token']) && $_POST['token'] != ''){
 
-    require("../db/user_trans.php");
+    require("/home/matrixfr/public_html/download_api/db/user_trans.php");
     $getconinfo = new Usertrans;
 
+    $token = $_POST['token'];
+    $fname = $_POST['name'];
+    $response = $getconinfo->verifytoken($token);
+    
+    if($response){
+        
     //file extraction
     $name = $_FILES["file"]["name"];
     $size = $_FILES["file"]["size"];
     $test = explode(".", $_FILES["file"]["name"]);
     $extension = end($test);
     $random = generate_random();
-    $filename = $random.".".$extension;
+    $filename = $random."-".$fname.".".$extension;
     //echo $name."  ".$filename;
 
-    $location = '../download/upload/' .$filename;
+    $location = '/home/matrixfr/public_html/download_api/download/upload/' .$filename;
 
-    $getconinfo->savefilesize($size, $name, $random, "upload/".$filename, 200, time(), $size);
+    $getconinfo->savefilesize($size, $name, $fname, $random, "upload/".$filename, 200, time(), $size);
     move_uploaded_file($_FILES["file"]["tmp_name"], $location);
 
     $array = array("code_status" => "200", "error_status" => "ok", "unique_id" => $random);
     echo json_encode($array);
+    
+    } else {
+        $array = array("code_status" => "401", "error_status" => "Authentication Failure");
+        echo json_encode($array);
+    }
 
 } else {
     $array = array("code_status" => "401", "error_status" => "Authentication Failure");
