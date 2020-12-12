@@ -19,6 +19,7 @@ $(document).ready(function() {
         var file_extension = file_name.split('.').pop().toLowerCase();
         var token = $('#token').val();
         var name = $('#name').val();
+        //console.log(name);
 
         if (property.size > 10000000) {
             alert("Upload within 10 mb");
@@ -153,7 +154,7 @@ $(document).ready(function() {
 
                         if (response['code_status'] == '200') {
 
-                            $("#download_url").html(response['filename']);
+                            $("#download_url").html("<a target='_blank' href='" + response['filename'] + "'>Open link</a>");
 
                         } else {
                             alert(response['error_status']);

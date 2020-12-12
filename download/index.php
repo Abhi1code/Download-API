@@ -36,11 +36,13 @@ if(isset($_POST['url']) && !empty($_POST['url']) && isset($_POST['token']) && !e
 
         $response = json_encode(array("code_status" => "429", "error_status" => "Too many request"));
         echo ($response);
+        die();
       }
     } else {
 
       $array = array("code_status" => "401", "error_status" => "Authentication Failure");
       echo json_encode($array);
+      die();
     }
 
     $size = ob_get_length();
