@@ -7,7 +7,7 @@ error_reporting(0);
 
 if(isset($_GET['id']) && !empty($_GET['id'])){
     
-    require("/home/matrixfr/public_html/download_api/db/user_trans.php");
+    require($_SERVER['DOCUMENT_ROOT']."/download_api/db/user_trans.php");
     $getconinfo = new Usertrans;
     
     $data = $getconinfo->extractinfo($_GET['id']);

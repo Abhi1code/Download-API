@@ -2,12 +2,14 @@
 /**
  * database connection
  */
+require_once($_SERVER['DOCUMENT_ROOT'].'/download_api/config.php');
+
 class Dbconnect
 {
-	private $hostname = 'localhost';
-	private $dbname = 'matrixfr_mat';
-	private $user = 'matrixfr_mat';
-	private $password = 'itslife';
+	private $hostname = DB_HOST;
+	private $dbname = DB_NAME;
+	private $user = DB_USERNAME;
+	private $password = DB_PASSWORD;
 	
 	public function establish_conn()
 	{

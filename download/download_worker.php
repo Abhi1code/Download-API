@@ -16,7 +16,7 @@ class DownloadWorker
 
 	function __construct($url, $name)
 	{
-		require_once("/home/matrixfr/public_html/download_api/db/user_trans.php");
+		require_once($_SERVER['DOCUMENT_ROOT']."/download_api/db/user_trans.php");
 		$this->mconn = new Usertrans;
         $this->url = $url;
         $this->name = $name;
@@ -58,7 +58,7 @@ class DownloadWorker
 	private function generate_filename(){
 		$ext = $this->extract_extension($this->url);
 		if($ext){
-           return ("upload/".$this->random."-".$this->name.".".$ext);
+           return ($this->random."-".$this->name.".".$ext);
 		}
 		return false;
 	}
@@ -110,7 +110,7 @@ class DownloadWorker
 	  private function download_file(){
 		
 		$file = fopen ($this->url, "r");
-		$save = fopen ($this->filename, "a");
+		$save = fopen ($_SERVER['DOCUMENT_ROOT']."/uploads/".$this->filename, "a");
 
 		$total_downloaded_length = 0;
 		$temp = 0;

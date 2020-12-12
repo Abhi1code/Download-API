@@ -7,7 +7,7 @@ error_reporting(0);
 
 if($_FILES["file"]["name"] != '' && isset($_POST['token']) && $_POST['token'] != ''){
 
-    require("/home/matrixfr/public_html/download_api/db/user_trans.php");
+    require($_SERVER['DOCUMENT_ROOT']."/download_api/db/user_trans.php");
     $getconinfo = new Usertrans;
 
     $token = $_POST['token'];
@@ -25,9 +25,9 @@ if($_FILES["file"]["name"] != '' && isset($_POST['token']) && $_POST['token'] !=
     $filename = $random."-".$fname.".".$extension;
     //echo $name."  ".$filename;
 
-    $location = '/home/matrixfr/public_html/download_api/download/upload/' .$filename;
+    $location = $_SERVER['DOCUMENT_ROOT']."/uploads/".$filename;
 
-    $getconinfo->savefilesize($size, $name, $fname, $random, "upload/".$filename, 200, time(), $size);
+    $getconinfo->savefilesize($size, $name, $fname, $random, $filename, 200, time(), $size);
     move_uploaded_file($_FILES["file"]["tmp_name"], $location);
 
     $array = array("code_status" => "200", "error_status" => "ok", "unique_id" => $random);
